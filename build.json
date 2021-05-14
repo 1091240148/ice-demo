@@ -1,4 +1,14 @@
 {
+  "proxy": {
+    "/api": {
+      "enable": true,
+      "changeOrigin": true,
+      "pathRewrite":{
+        "^/api": ""
+      },
+      "target": ""
+    }
+  },
   "plugins": [
     [
       "build-plugin-fusion",

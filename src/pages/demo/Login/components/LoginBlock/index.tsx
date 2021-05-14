@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState ,useEffect} from 'react';
 import { Input, Message, Form, Divider, Checkbox, Icon } from '@alifd/next';
-
+import { useRequest } from 'ice';
 import { useInterval } from './utils';
 import styles from './index.module.scss';
+import store from '@/store';
 
 const { Item } = Form;
 
@@ -46,7 +47,7 @@ const LoginBlock: React.FunctionComponent<LoginProps> = (
         setSecond(59);
       }
     },
-    isRunning ? 1000 : null,
+    isRunning ? 1000 : 0,
   );
 
   const formChange = (values: IDataSource) => {
@@ -66,9 +67,13 @@ const LoginBlock: React.FunctionComponent<LoginProps> = (
       console.log('errors', errors);
       return;
     }
+    login();
     console.log('values:', values);
-    Message.success('登录成功');
+    // Message.success('登录成功');
   };
+
+  const login=()=>{
+  }
 
   const phoneForm = (
     <>
@@ -190,5 +195,22 @@ const LoginBlock: React.FunctionComponent<LoginProps> = (
     </div>
   );
 };
+
+
+// const LoginBlock = () => {
+//   const [userInfo, userDispatchers] = store.useModel('login');
+//   console.log("==>",userInfo)
+
+//   useEffect(() => {
+//     console.log(userDispatchers.login())
+//   }, []);
+//   console.log(userInfo)
+
+//   return (
+//     <div>
+//       <Input  />
+//     </div>
+//   );
+// };
 
 export default LoginBlock;

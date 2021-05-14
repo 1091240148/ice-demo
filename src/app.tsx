@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { runApp, IAppConfig } from 'ice';
+import { runApp, IAppConfig ,config} from 'ice';
 import LocaleProvider from '@/components/LocaleProvider';
 import { getLocale } from '@/utils/locale';
 

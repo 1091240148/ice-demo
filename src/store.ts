@@ -1,6 +1,7 @@
 import { createStore } from 'ice';
 import user from './models/user';
-
-const store = createStore({ user });
+import login from './models/login';
+console.log("user",user,login)
+const store = createStore({ user,login });
 
 export default store;
