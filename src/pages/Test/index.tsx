@@ -1,6 +1,8 @@
 import React from 'react';
 import { ResponsiveGrid } from '@alifd/next';
 import PageHeader from '@/components/PageHeader';
+import List from './components/List';
+import Search from './components/Search';
 
 const { Cell } = ResponsiveGrid;
 
@@ -8,14 +10,12 @@ const Test = () => {
   return (
     <ResponsiveGrid gap={20}>
       <Cell colSpan={12}>
-        <PageHeader
-          title="分级表单"
-          description="分级表单分级表单分级表单分级表单分级表单分级表单分级表单"
-          breadcrumbs={[{ name: '表单页面' }, { name: '分级表单' }]}
-        />
+        <Search></Search>
       </Cell>
 
-      <Cell colSpan={12} />
+      <Cell colSpan={12}>
+        <List></List>
+      </Cell>
     </ResponsiveGrid>
   );
 };

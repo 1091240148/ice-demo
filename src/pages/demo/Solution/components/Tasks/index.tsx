@@ -20,7 +20,7 @@ const Tasks = () => {
   const [taskList, taskDispatchers] = store.useModel('tasks');
 
   console.log(taskList, taskDispatchers);
-  const handleSubmit = (values: IFromValue): void => {
+  const handleSubmit = (values: any): void => {
     taskDispatchers.addTask(values);
     Message.success('提交成功');
   };
